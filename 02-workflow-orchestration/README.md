@@ -7,11 +7,11 @@ This folder contains my work for Module 2 of the Data Engineering Zoomcamp. In t
 In this module, I learned how to build and manage reliable data pipelines. The core technologies and concepts I practiced include:
 
 * **Docker Compose Configuration:** I customized the `docker-compose.yml` file to build a comprehensive, containerized infrastructure. Instead of running services in isolation, I integrated **Postgres** (serving as the Data Warehouse) and **PGAdmin** directly alongside the **Kestra** platform. This setup ensures a fully reproducible environment where the orchestrator, database, and management UI launch together with a single command.
-* [cite_start]**Workflow Orchestration:** Using **Kestra** to orchestrate the entire ETL process (Extract, Transform, Load)[cite: 536, 537].
-* [cite_start]**Infrastructure as Code:** Running the entire data stack (Kestra, Postgres, PGAdmin) locally using **Docker Compose**[cite: 508, 510].
-* [cite_start]**ETL Pipeline:** Building flows to extract data from CSV files (NYC Taxi dataset), process it, and load it into a Postgres Data Warehouse[cite: 528].
-* [cite_start]**Scheduling & Backfilling:** Configuring Schedule triggers to automate daily runs and using the **Backfill** feature to process historical data (e.g., the entire year of 2020) without manual intervention[cite: 530, 531].
-* [cite_start]**Postgres & SQL:** Querying and managing data within a Postgres database running in a Docker container[cite: 511].
+* **Workflow Orchestration:** Using **Kestra** to orchestrate the entire ETL process (Extract, Transform, Load)
+* **Infrastructure as Code:** Running the entire data stack (Kestra, Postgres, PGAdmin) locally using **Docker Compose**
+* **ETL Pipeline:** Building flows to extract data from CSV files (NYC Taxi dataset), process it, and load it into a Postgres Data Warehouse
+* **Scheduling & Backfilling:** Configuring Schedule triggers to automate daily runs and using the **Backfill** feature to process historical data (e.g., the entire year of 2020) without manual intervention
+* **Postgres & SQL:** Querying and managing data within a Postgres database running in a Docker container
 
 ## 2. Homeworh.
 
@@ -56,6 +56,7 @@ In this module, I learned how to build and manage reliable data pipelines. The c
 * **Answer:** Add a `timezone` property set to `America/New_York` in the `Schedule` trigger configuration.
 * **Explanation:** Kestra relies on the IANA Time Zone Database standard to handle timezones and Daylight Saving Time (DST) transitions correctly. Therefore, the canonical ID `America/New_York` is used instead of fixed offsets (like UTC-5) or abbreviations (like EST).
 * **Note:** The `timezone` property must be defined specifically inside the `triggers` section of the flow (under the `io.kestra.plugin.core.trigger.Schedule` type), not at the global flow level.
+
 
 
 
