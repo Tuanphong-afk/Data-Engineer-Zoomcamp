@@ -13,7 +13,7 @@ In this module, I learned how to build and manage reliable data pipelines. The c
 * **Scheduling & Backfilling:** Configuring Schedule triggers to automate daily runs and using the **Backfill** feature to process historical data (e.g., the entire year of 2020) without manual intervention
 * **Postgres & SQL:** Querying and managing data within a Postgres database running in a Docker container
 
-## 2. Homeworh.
+## 2. Homework.
 
 ### Question 1: Within the execution for Yellow Taxi data for the year 2020 and month 12: what is the uncompressed file size (i.e. the output file yellow_tripdata_2020-12.csv of the extract task)?
 
@@ -56,6 +56,7 @@ In this module, I learned how to build and manage reliable data pipelines. The c
 * **Answer:** Add a `timezone` property set to `America/New_York` in the `Schedule` trigger configuration.
 * **Explanation:** Kestra relies on the IANA Time Zone Database standard to handle timezones and Daylight Saving Time (DST) transitions correctly. Therefore, the canonical ID `America/New_York` is used instead of fixed offsets (like UTC-5) or abbreviations (like EST).
 * **Note:** The `timezone` property must be defined specifically inside the `triggers` section of the flow (under the `io.kestra.plugin.core.trigger.Schedule` type), not at the global flow level.
+
 
 
 
